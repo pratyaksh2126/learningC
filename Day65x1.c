@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char arr[3][20] = {"clanguage", "geeksquiz", "geeksforgeeks"};
+    char temp[20];
+    for (int i=0; i<3-1; i++) {
+        for (int j=i+1; j<3; j++) {
+            if (strcmp(arr[i], arr[j]) > 0) {
+                strcpy(temp, arr[i]);
+                strcpy(arr[i], arr[j]);
+                strcpy(arr[j], temp);
+            }
+        }
+    }
+    printf("Sorted strings:\n");
+    for(int i=0; i<3; i++) printf("%s\n", arr[i]);
+    return 0;
+}
